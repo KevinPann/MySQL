@@ -15,17 +15,20 @@ $app['database'] = new QueryBuilder(
 
 require 'controllers/PagesController.php';
 require 'controllers/UsersController.php';
+require 'controllers/TasksController.php';
 
-function view ( $name, $data = [] ) {
+
+
+function view($name, $data = [])
+{
 
     extract($data);
 
     return require "views/{$name}.view.php";
-
 }
 
-function redirect ( $path ) { 
+function redirect($path)
+{
 
     header("Location: /{$path}");
-
 }

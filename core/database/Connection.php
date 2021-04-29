@@ -1,8 +1,11 @@
+
 <?php
 
-class Connection {
+class Connection
+{
 
-    public static function make ( $config ) {
+    public static function make($config)
+    {
 
         try {
             return new PDO(
@@ -11,10 +14,8 @@ class Connection {
                 $config['password'],
                 $config['options']
             );
-        } catch ( PDOException $e ) {
-            die('Viga: ei saa andmebaasiga ühendust!');
+        } catch (PDOException $e) {
+            die($e->getMessage());
         }
-
     }
-
 }
